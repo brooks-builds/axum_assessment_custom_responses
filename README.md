@@ -2,6 +2,10 @@
 
 In this assessment you will be creating custom responses for route handlers. These responses will all have a status code and a message. This is important in web development because when things go wrong (or even right) we need to tell the clients what happened and why so they can inform their users appropriately.
 
+## Instructions
+
+Update the three route handlers, one requires a standard status code with a message, and the others require a non-standard status code with text and json. 
+
 ## Skills
 
 - Responding with standard Status Codes
