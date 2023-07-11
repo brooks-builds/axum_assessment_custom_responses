@@ -2,7 +2,6 @@ use eyre::Result;
 use router::create_router;
 use std::net::SocketAddr;
 
-pub mod json_error;
 mod router;
 
 pub async fn run() -> Result<()> {
