@@ -18,3 +18,19 @@ async fn api_returns_standard_code_with_text() -> Result<()> {
 
     Ok(())
 }
+
+#[tokio::test]
+async fn api_returns_non_standard_code_with_text() -> Result<()> {
+    let url = format!("{BASE_API_URL}/non_standard_with_text");
+    let response = reqwest::get(url).await?;
+    let status_code = response.status();
+    let expected_status_code = 599;
+
+    assert_eq!(status_code, expected_status_code);
+
+    let text = response.text().await?;
+    let expected_text = "I'm a non-standard error";
+
+    assert_eq!(text, expected_text);
+    Ok(())
+}
